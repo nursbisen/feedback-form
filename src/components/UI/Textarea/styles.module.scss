@@ -35,7 +35,7 @@
     }
     
     &::-webkit-scrollbar-thumb {
-      background-color: white;
+      background-color: #a9ffa0;
       border-radius: 6px;
 
       &:hover {
@@ -67,10 +67,10 @@
   }
 }
 
-
 .error {
   border-color: #ff5c5c;
   transition: 200ms;
+  animation: shake 150ms 3;
 
   &:hover{
     border-color: red;
@@ -95,4 +95,16 @@
   }
 }
 
+@keyframes shake {
+  0%, 100% {
+    translate: 0;
+  }
 
+  25% {
+    translate: 8px 0;
+  }
+
+  75% {
+    translate: -8px 0;
+  }
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import exportJson from "../../utils/exportJson";
 
-import { FeedbackFormTypes } from "./FeedbackForm";
+import exportJson from "../../utils/exportJson";
+import { FeedbackFormType } from "../../types/feedbackForm";
 
 const useContainer = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -12,7 +12,7 @@ const useContainer = () => {
     close: () => setModalOpen(false),
   };
 
-  const exportFormData = (formState: FeedbackFormTypes.FormStateType) => {
+  const exportFormData = (formState: FeedbackFormType) => {
     exportJson(formState, formState.name);
   };
 

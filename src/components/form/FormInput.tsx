@@ -1,10 +1,11 @@
 import { useFormContext } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+import { ErrorMessage as RHFErrorMessage } from "@hookform/error-message";
 
-import { Input } from "../UI";
 import { FormFieldProps } from "./types";
+import { ErrorMessage, Input } from "../UI";
+import { withoutSpecialCharsValidationRegEx } from "../../constants/regExs";
 
-const FormInput = ({ label, name }: FormFieldProps) => {
+const FormInput = ({ label, name, validation }: FormFieldProps) => {
   const { register, getFieldState, formState } = useFormContext();
 
   return (
@@ -12,9 +13,13 @@ const FormInput = ({ label, name }: FormFieldProps) => {
       <Input
         label={label}
         error={!!getFieldState(name, formState).error}
-        {...register(name, { required: "Обязательное поле" })}
+        {...register(name, validation)}
       />
-      <ErrorMessage name={name} errors={formState.errors} />
+      <RHFErrorMessage
+        name={name}
+        errors={formState.errors}
+        render={({ message }) => <ErrorMessage>{message}</ErrorMessage>}
+      />
     </>
   );
 };

@@ -4,4 +4,5 @@ export interface PhoneFieldProps extends Pick<
 > {
   inputRef?: React.Ref<HTMLInputElement>;
   label: string;
+  error?: boolean;
 }

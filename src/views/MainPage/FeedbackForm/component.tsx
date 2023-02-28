@@ -1,4 +1,5 @@
 import { Button } from "../../../components/UI";
+import { validationSchemas } from "../../../validationSchemas/feedbackForm";
 import { Form, FormInput, FormTextarea, FormPhoneField } from "../../../components/form";
 
 import useContainer from "./hook";
@@ -13,9 +14,9 @@ const FeedbackForm = ({ onCancel, onSubmit }: FeedbackFormProps) => {
     <div className={s.formContainer}>
       <h1>Форма обратной связи</h1>
       <Form methods={methods} onSubmit={handleSubmitForm}>
-        <FormInput label="Имя" name="name" />
-        <FormPhoneField label="Номер телефона" name="phoneNumber" />
-        <FormTextarea label="Сообщение" name="message" />
+        <FormInput label="Имя" name="name" validation={validationSchemas.name} />
+        <FormPhoneField label="Номер телефона" name="phoneNumber" validation={validationSchemas.phoneNumber} />
+        <FormTextarea label="Сообщение" name="message" validation={validationSchemas.message} />
         <div className={s.actionsRow}>
           <Button
             type="submit"

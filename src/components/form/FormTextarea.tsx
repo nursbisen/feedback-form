@@ -1,20 +1,24 @@
 import { useFormContext } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+import { ErrorMessage as RHFErrorMessage } from "@hookform/error-message";
 
-import TextArea from "../UI/Textarea";
 import { FormFieldProps } from "./types";
+import { Textarea, ErrorMessage } from "../UI";
 
-const FormInput = ({ label, name }: FormFieldProps) => {
+const FormInput = ({ label, name, validation }: FormFieldProps) => {
   const { register, getFieldState, formState } = useFormContext();
 
   return (
     <>
-      <TextArea
+      <Textarea
         error={!!getFieldState(name, formState).error}
         label={label}
-        {...register(name, { required: "Обязательное поле" })}
+        {...register(name, validation)}
       />
-      <ErrorMessage errors={formState.errors} name={name} />
+      <RHFErrorMessage
+        name={name}
+        errors={formState.errors}
+        render={({ message }) => <ErrorMessage>{message}</ErrorMessage>}
+      />
     </>
   );
 };
