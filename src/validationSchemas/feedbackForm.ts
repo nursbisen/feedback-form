@@ -27,10 +27,10 @@ export const validationSchemas: FormValidationType<FeedbackFormType> = {
   },
   message: {
     required: "Обязательное поле",
-    // pattern: {
-    //   value: withoutSpecialCharsValidationRegEx,
-    //   message: "Поле не должен содержать спец.символы"
-    // },
+    pattern: {
+      value: withoutSpecialCharsValidationRegEx,
+      message: "Поле не должен содержать спец.символы"
+    },
     minLength: {
       value: 10,
       message: "Слишком короткое сообщение",

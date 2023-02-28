@@ -15,7 +15,7 @@ const useContainer = () => {
 
   const onSubmitForm = (formState: FeedbackFormType) => {
     exportJson(formState, formState.name);
-    toast.success("Сообщение успешно отправлено")
+    toast.success("Сообщение успешно отправлено");
   };
 
   return {

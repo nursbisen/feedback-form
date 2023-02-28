@@ -7,11 +7,10 @@ const App = () => (
     <Toaster
       position="top-center"
       toastOptions={{
-        success: {
-          style: {
-            backgroundColor: '#061323',
-            color: '#c0ffa5',
-          }
+        duration: 3000,
+        style: {
+          backgroundColor: '#061323',
+          color: '#c0ffa5',
         }
       }}
     />
