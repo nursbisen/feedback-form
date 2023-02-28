@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 import useContainer from "./hook";
 import FeedbackForm from "./FeedbackForm";
 import { Button, Modal } from "../../components/UI";
@@ -7,7 +5,7 @@ import { Button, Modal } from "../../components/UI";
 import s from './styles.module.scss';
 
 const MainPage = () => {
-  const { modal, exportFormData } = useContainer();
+  const { modal, onSubmitForm } = useContainer();
 
   return (
     <>
@@ -20,7 +18,7 @@ const MainPage = () => {
         />
       </div>
       <Modal isOpen={modal.isOpen} onClose={modal.close}>
-        <FeedbackForm onCancel={modal.close} onSubmit={exportFormData} />
+        <FeedbackForm onCancel={modal.close} onSubmit={onSubmitForm} />
       </Modal>
     </>
   );
