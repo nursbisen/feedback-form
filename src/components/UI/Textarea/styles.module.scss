@@ -1,0 +1,98 @@
+.field {
+  position: relative;
+  border: 2px solid #c0ffa5;
+  border-radius: 6px;
+  margin-top: 16px;
+
+  &:hover {
+    border-color: #7eff47;
+  }
+
+  &:focus-within {
+    border-color: #7eff47;
+
+    label {
+      color: #7eff47;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+    height: 100%;
+    padding: 8px 12px;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    font-size: 16px;
+
+    &::-webkit-scrollbar {
+      height: 100%;
+      width: 8px;
+      border-radius: 6px;
+      background-color: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: white;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: #a9ffa0;
+      }
+    }
+
+    /* &::-webkit-inner-spin-button {
+      appearance: none;
+    } */
+
+    :is(&:focus, &:not(:placeholder-shown)) ~ label {
+      transform: translateY(-16px) scale(.9);
+      background-color: #000913;
+      padding: 0 4px;
+      line-height: 16px;
+      height: min-content;
+    }
+  }
+  
+  label {
+    position: absolute;
+    background-color: transparent;
+    left: 12px;
+    top: 6px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: #c0ffa5;
+  }
+}
+
+
+.error {
+  border-color: #ff5c5c;
+  transition: 200ms;
+
+  &:hover{
+    border-color: red;
+    
+    textarea {
+      &:not(:placeholder-shown) ~ label {
+        color: red;
+      }
+    }
+  }
+
+  &:focus-within {
+    border-color: red;
+
+    label {
+      color: red;
+    }
+  }
+
+  label {
+    color: #ff5c5c;
+  }
+}
+
+

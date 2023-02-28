@@ -1,0 +1,30 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  color: #c0ffa5;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: url("./assets/layered-waves-haikei.svg") no-repeat fixed;
+  background-size: 100%;
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-color: #266900;
+  }
+}

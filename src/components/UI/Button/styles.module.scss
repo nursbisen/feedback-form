@@ -1,0 +1,57 @@
+.button {
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid transparent;
+  transition: 200ms;
+}
+
+.primary {
+  color: rgb(231, 231, 231);
+  background-color: #43e100;
+  border-color: transparent;
+  
+  &:hover {
+    background-color: transparent;
+    color: #c0ffa5;
+    border-color: #c0ffa5;
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: #c0ffa5;
+  border-color: #c0ffa5;
+  
+  &:hover {
+    color: rgb(231, 231, 231);
+    background-color: #43e100;
+    border-color: transparent;
+  }
+}
+
+.lg {
+  padding: 16px 20px;
+  font-size: large;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  &:active {
+    transform: translateY(0px) scale(.9);
+  }
+}
+
+.sm {
+  padding: 10px 14px;
+  font-size: medium;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+  
+  &:active {
+    transform: translateY(0px) scale(.9);
+  }
+}
